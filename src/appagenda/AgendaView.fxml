@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="rootAgendaView" prefHeight="400.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appagenda.AgendaViewController">
+   <children>
+      <VBox layoutX="34.0" prefHeight="400.0" prefWidth="546.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="546.0" spacing="5.0">
+               <children>
+                  <Button fx:id="ButtonNuevo" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionButtonNuevo" text="Nuevo">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="ButtonEditar" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionButtonEditar" text="Editar">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="ButtonSuprimir" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onActionButtonSuprimir" text="Suprimir">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tableViewAgenda" editable="true" prefHeight="206.0" prefWidth="0.0">
+              <columns>
+                <TableColumn fx:id="columnNombre" prefWidth="140.0" text="Nombre" />
+                <TableColumn fx:id="columnApellidos" prefWidth="135.0" text="Apellidos" />
+                  <TableColumn fx:id="columnEmail" prefWidth="134.0" text="E-Mail" />
+                  <TableColumn fx:id="columnProvincia" prefWidth="136.0" text="Provincia" />
+              </columns>
+            </TableView>
+            <GridPane prefHeight="135.0" prefWidth="610.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.0" minWidth="10.0" prefWidth="91.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="529.0" minWidth="10.0" prefWidth="516.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="textFieldNombre" prefHeight="25.0" prefWidth="439.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="textFieldApellidos" prefHeight="25.0" prefWidth="517.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="155.0" text="Nombre: " textAlignment="CENTER" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="309.0" text="Apellidos: " textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="ButtonGuardar" mnemonicParsing="false" onAction="#onActionButtonGuardar" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin></Button>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
